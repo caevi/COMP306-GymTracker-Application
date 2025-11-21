@@ -21,11 +21,12 @@ builder.Services.AddCors(options =>
 });
 
 // ----------------------
-// Database (SQLite)
+// Database (RDS SQL Server)
 // ----------------------
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseSqlite("Data Source=gym.db");
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    options.UseSqlServer(connectionString);
 });
 
 // ----------------------
@@ -50,12 +51,17 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // ----------------------
-// Ensure DB created
+// Ensure DB created + seed
 // ----------------------
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+    // create schema if needed
     db.Database.EnsureCreated();
+
+    // seed initial data (users, exercises, workouts)
+    DbSeeder.Seed(db);
 }
 
 // ----------------------
