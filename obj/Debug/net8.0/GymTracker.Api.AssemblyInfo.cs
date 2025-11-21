@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GymTracker.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35752b7fb802566748d8aebd327dc68cd8168062")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88d526d60546db2eed11f2cba518243f6b8ea7f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("GymTracker.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GymTracker.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
